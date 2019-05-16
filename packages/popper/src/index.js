@@ -14,31 +14,31 @@ export default class Popper {
   /**
    * Creates a new Popper.js instance.
    * @class Popper
-   * @param {Element|referenceObject} reference - The reference element used to position the popper
-   * @param {Element} popper - The HTML / XML element used as the popper
-   * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
-   * @return {Object} instance - The generated Popper.js instance
+   * @param {Element|referenceObject} reference - The reference element used to position the popper 用于定位提升阀的参考元件
+   * @param {Element} popper - The HTML / XML element used as the popper 用作popper的html/xml元素
+   * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults) 配置
+   * @return {Object} instance - The generated Popper.js instance 返回popper 实例
    */
   constructor(reference, popper, options = {}) {
     // make update() debounced, so that it only runs at most once-per-tick
-    this.update = debounce(this.update.bind(this));
+    this.update = debounce(this.update.bind(this)); // 执行 update 方法
 
     // with {} we create a new object with the options inside it
-    this.options = { ...Popper.Defaults, ...options };
+    this.options = { ...Popper.Defaults, ...options }; // 合并配置信息
 
-    // init state
+    // init state 状态初始化
     this.state = {
-      isDestroyed: false,
-      isCreated: false,
-      scrollParents: [],
+      isDestroyed: false,//销毁状态
+      isCreated: false,// 创建状态
+      scrollParents: [], // 内器
     };
 
     // get reference and popper elements (allow jQuery wrappers)
-    this.reference = reference && reference.jquery ? reference[0] : reference;
-    this.popper = popper && popper.jquery ? popper[0] : popper;
+    this.reference = reference && reference.jquery ? reference[0] : reference;// 确认 reference 如果是jquery对象处理
+    this.popper = popper && popper.jquery ? popper[0] : popper;// 确认 popper 如果是jquery对象处理
 
     // Deep merge modifiers options
-    this.options.modifiers = {};
+    this.options.modifiers = {};// 修饰配置
     Object.keys({
       ...Popper.Defaults.modifiers,
       ...options.modifiers,
@@ -77,9 +77,9 @@ export default class Popper {
     });
 
     // fire the first update to position the popper in the right place
-    this.update();
+    this.update(); //逻辑 主入口
 
-    const eventsEnabled = this.options.eventsEnabled;
+    const eventsEnabled = this.options.eventsEnabled; //
     if (eventsEnabled) {
       // setup event listeners, they will take care of update the position in specific situations
       this.enableEventListeners();
@@ -108,7 +108,7 @@ export default class Popper {
    * @method scheduleUpdate
    * @memberof Popper
    */
-  scheduleUpdate = () => requestAnimationFrame(this.update);
+  scheduleUpdate = () => requestAnimationFrame(this.update); // 下一贞 更新
 
   /**
    * Collection of utilities useful when writing custom modifiers.
@@ -126,7 +126,7 @@ export default class Popper {
    * @member Utils
    * @memberof Popper
    */
-  static Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
+  static Utils = (typeof window !== 'undefined' ? window : global).PopperUtils; // static
 
   static placements = placements;
 

@@ -1,5 +1,5 @@
 /**
- * Get CSS computed property of the given element
+ * Get CSS computed property of the given element //返回element 的属性集合，如果指定property,则返回指定属性
  * @method
  * @memberof Popper.Utils
  * @argument {Eement} element

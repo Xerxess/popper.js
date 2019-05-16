@@ -1,7 +1,7 @@
 import getStyleComputedProperty from './getStyleComputedProperty';
 import isIE from './isIE';
 /**
- * Finds the first parent of an element that has a transformed property defined
+ * Finds the first parent of an element that has a transformed property defined 查找定义了转换属性的元素的第一个父级
  * @method
  * @memberof Popper.Utils
  * @argument {Element} element

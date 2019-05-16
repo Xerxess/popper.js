@@ -11,7 +11,7 @@ const isIE10 = isBrowser && /MSIE 10/.test(navigator.userAgent);
  * @returns {Boolean} isIE
  */
 export default function isIE(version) {
-  if (version === 11) {
+  if (version === 11) { // 通过实现具体的版本检测
     return isIE11;
   }
   if (version === 10) {

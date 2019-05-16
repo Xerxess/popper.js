@@ -18,7 +18,7 @@ function attachToScrollParents(scrollParent, event, callback, scrollParents) {
 }
 
 /**
- * Setup needed event listeners used to update the popper position
+ * Setup needed event listeners used to update the popper position 用于更新popper位置的事件侦听器
  * @method
  * @memberof Popper.Utils
  * @private

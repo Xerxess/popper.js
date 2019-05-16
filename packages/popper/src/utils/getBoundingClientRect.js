@@ -1,3 +1,5 @@
+// ClientRect 不包含滚动条
+
 import getStyleComputedProperty from './getStyleComputedProperty';
 import getBordersSize from './getBordersSize';
 import getWindowSizes from './getWindowSizes';
@@ -48,10 +50,10 @@ export default function getBoundingClientRect(element) {
   const height =
     sizes.height || element.clientHeight || result.bottom - result.top;
 
-  let horizScrollbar = element.offsetWidth - width;
-  let vertScrollbar = element.offsetHeight - height;
+  let horizScrollbar = element.offsetWidth - width;// 获取滚动条宽度
+  let vertScrollbar = element.offsetHeight - height;// 获取滚动条高度
 
-  // if an hypothetical scrollbar is detected, we must be sure it's not a `border`
+  // if an hypothetical scrollbar is detected, we must be sure it's not a `border`  如果检测到假设的滚动条，我们必须确保它不是“border”`
   // we make this check conditional for performance reasons
   if (horizScrollbar || vertScrollbar) {
     const styles = getStyleComputedProperty(element);

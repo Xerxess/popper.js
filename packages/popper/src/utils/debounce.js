@@ -1,3 +1,5 @@
+//限制函数执行频率,必须第一次函数执行后才可再次执行
+
 import isBrowser from './isBrowser';
 
 const longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
@@ -9,6 +11,10 @@ for (let i = 0; i < longerTimeoutBrowsers.length; i += 1) {
   }
 }
 
+/**
+ * 使用Promise 实现
+ * @param {*} fn
+ */
 export function microtaskDebounce(fn) {
   let called = false
   return () => {
@@ -23,6 +29,10 @@ export function microtaskDebounce(fn) {
   }
 }
 
+/**
+ * 使用setTimeout
+ * @param {*} fn
+ */
 export function taskDebounce(fn) {
   let scheduled = false;
   return () => {

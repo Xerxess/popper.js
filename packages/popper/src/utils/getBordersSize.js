@@ -1,5 +1,5 @@
 /*
- * Helper to detect borders of a given element
+ * Helper to detect borders of a given element 根据styles 计算 一组相对border的宽度，即left+right / top+bottom
  * @method
  * @memberof Popper.Utils
  * @param {CSSStyleDeclaration} styles

@@ -1,3 +1,5 @@
+// 相对html 偏移
+
 import getOffsetRectRelativeToArbitraryNode from './getOffsetRectRelativeToArbitraryNode';
 import getScroll from './getScroll';
 import getClientRect from './getClientRect';

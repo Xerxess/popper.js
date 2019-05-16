@@ -1,6 +1,6 @@
 import getScrollParent from './getScrollParent';
 import getParentNode from './getParentNode';
-import findCommonOffsetParent from './findCommonOffsetParent';
+import findCommonOffsetParent from './findCommonOffsetParent'; // 查找两个提供的节点共用的偏移父级
 import getOffsetRectRelativeToArbitraryNode from './getOffsetRectRelativeToArbitraryNode';
 import getViewportOffsetRectRelativeToArtbitraryNode from './getViewportOffsetRectRelativeToArtbitraryNode';
 import getWindowSizes from './getWindowSizes';
@@ -71,10 +71,10 @@ export default function getBoundaries(
   // Add paddings
   padding = padding || 0;
   const isPaddingNumber = typeof padding === 'number';
-  boundaries.left += isPaddingNumber ? padding : padding.left || 0; 
-  boundaries.top += isPaddingNumber ? padding : padding.top || 0; 
-  boundaries.right -= isPaddingNumber ? padding : padding.right || 0; 
-  boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0; 
+  boundaries.left += isPaddingNumber ? padding : padding.left || 0;
+  boundaries.top += isPaddingNumber ? padding : padding.top || 0;
+  boundaries.right -= isPaddingNumber ? padding : padding.right || 0;
+  boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0;
 
   return boundaries;
 }

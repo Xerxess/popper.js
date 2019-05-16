@@ -1,3 +1,5 @@
+// 获取当前填充高度，宽度 ie10 特殊处理 margin
+
 import isIE from './isIE';
 
 function getSize(axis, body, html, computedStyle) {
@@ -8,10 +10,10 @@ function getSize(axis, body, html, computedStyle) {
     html[`offset${axis}`],
     html[`scroll${axis}`],
     isIE(10)
-      ? (parseInt(html[`offset${axis}`]) + 
-      parseInt(computedStyle[`margin${axis === 'Height' ? 'Top' : 'Left'}`]) + 
+      ? (parseInt(html[`offset${axis}`]) +
+      parseInt(computedStyle[`margin${axis === 'Height' ? 'Top' : 'Left'}`]) +
       parseInt(computedStyle[`margin${axis === 'Height' ? 'Bottom' : 'Right'}`]))
-    : 0 
+    : 0
   );
 }
 

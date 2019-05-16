@@ -12,7 +12,7 @@ export default function getScroll(element, side = 'top') {
 
   if (nodeName === 'BODY' || nodeName === 'HTML') {
     const html = element.ownerDocument.documentElement;
-    const scrollingElement = element.ownerDocument.scrollingElement || html;
+    const scrollingElement = element.ownerDocument.scrollingElement || html; //scrollingElement 只读属性Document返回对Element滚动文档的引用
     return scrollingElement[upperSide];
   }
 

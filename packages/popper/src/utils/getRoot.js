@@ -1,4 +1,5 @@
 /**
+ * 获取root 元素
  * Finds the root node (document, shadowDOM root) of the given element
  * @method
  * @memberof Popper.Utils

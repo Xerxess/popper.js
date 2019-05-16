@@ -1,4 +1,5 @@
 /**
+ * 转换 getBoundingClientRect 的right,boggom为对于right和bottom
  * Given element offsets, generate an output similar to getBoundingClientRect
  * @method
  * @memberof Popper.Utils

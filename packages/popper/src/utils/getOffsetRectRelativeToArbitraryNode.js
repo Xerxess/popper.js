@@ -22,8 +22,8 @@ export default function getOffsetRectRelativeToArbitraryNode(children, parent, f
     parentRect.left = Math.max(parentRect.left, 0);
   }
   let offsets = getClientRect({
-    top: childrenRect.top - parentRect.top - borderTopWidth,
-    left: childrenRect.left - parentRect.left - borderLeftWidth,
+    top: childrenRect.top - parentRect.top - borderTopWidth, //children 相对 parent的偏移
+    left: childrenRect.left - parentRect.left - borderLeftWidth,//children 相对 parent的偏移
     width: childrenRect.width,
     height: childrenRect.height,
   });

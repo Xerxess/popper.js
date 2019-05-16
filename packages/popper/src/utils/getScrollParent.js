@@ -2,7 +2,7 @@ import getStyleComputedProperty from './getStyleComputedProperty';
 import getParentNode from './getParentNode';
 
 /**
- * Returns the scrolling parent of the given element
+ * Returns the scrolling parent of the given element 递归找到带滚动条的父元素
  * @method
  * @memberof Popper.Utils
  * @argument {Element} element

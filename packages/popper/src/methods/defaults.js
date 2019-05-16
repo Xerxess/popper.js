@@ -18,25 +18,25 @@ import modifiers from '../modifiers/index';
  */
 export default {
   /**
-   * Popper's placement.
+   * Popper's placement. 位置
    * @prop {Popper.placements} placement='bottom'
    */
   placement: 'bottom',
 
   /**
-   * Set this to true if you want popper to position it self in 'fixed' mode
+   * Set this to true if you want popper to position it self in 'fixed' mode 是否启用fixed
    * @prop {Boolean} positionFixed=false
    */
   positionFixed: false,
 
   /**
-   * Whether events (resize, scroll) are initially enabled.
+   * Whether events (resize, scroll) are initially enabled. 是否监听events 默认监听
    * @prop {Boolean} eventsEnabled=true
    */
   eventsEnabled: true,
 
   /**
-   * Set to true if you want to automatically remove the popper when
+   * Set to true if you want to automatically remove the popper when destroy（）执行后是否删除
    * you call the `destroy` method.
    * @prop {Boolean} removeOnDestroy=false
    */
@@ -61,7 +61,7 @@ export default {
   onUpdate: () => {},
 
   /**
-   * List of modifiers used to modify the offsets before they are applied to the popper.
+   * List of modifiers used to modify the offsets before they are applied to the popper. //偏移修饰，处理边界情况
    * They provide most of the functionalities of Popper.js.
    * @prop {modifiers}
    */
