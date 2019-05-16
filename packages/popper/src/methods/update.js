@@ -25,7 +25,7 @@ export default function update() {
     offsets: {},
   };
 
-  // compute reference element offsets
+  // compute reference element offsets 计算参考元素偏移
   data.offsets.reference = getReferenceOffsets(
     this.state,
     this.popper,
