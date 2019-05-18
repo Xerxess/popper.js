@@ -17,7 +17,7 @@ export default function update() {
   }
 
   let data = {
-    instance: this,
+    instance: this,//当前对象
     styles: {},
     arrowStyles: {},
     attributes: {},
@@ -62,7 +62,7 @@ export default function update() {
     : 'absolute';
 
   // run the modifiers
-  data = runModifiers(this.modifiers, data);
+  data = runModifiers(this.modifiers, data);//使用修饰类
 
   // the first `update` will call `onCreate` callback
   // the other ones will call `onUpdate` callback

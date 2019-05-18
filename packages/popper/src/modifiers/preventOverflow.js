@@ -1,3 +1,6 @@
+
+// 针对边界处理
+
 import getOffsetParent from '../utils/getOffsetParent';
 import getBoundaries from '../utils/getBoundaries';
 import getSupportedPropertyName from '../utils/getSupportedPropertyName';
@@ -55,7 +58,7 @@ export default function preventOverflow(data, options) {
       if (
         popper[placement] < boundaries[placement] &&
         !options.escapeWithReference
-      ) {
+      ) { // 如果this.popper left 小于边界值进行修正
         value = Math.max(popper[placement], boundaries[placement]);
       }
       return { [placement]: value };
@@ -80,6 +83,7 @@ export default function preventOverflow(data, options) {
   order.forEach(placement => {
     const side =
       ['left', 'top'].indexOf(placement) !== -1 ? 'primary' : 'secondary';
+      // 为 left ,top 时执行 check.primary() 否则执行 check.secondary()
     popper = { ...popper, ...check[side](placement) };
   });
 

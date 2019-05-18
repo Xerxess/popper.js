@@ -39,7 +39,7 @@ export default class Popper {
 
     // Deep merge modifiers options
     this.options.modifiers = {};// 修饰配置
-    Object.keys({
+    Object.keys({ // 合并配置
       ...Popper.Defaults.modifiers,
       ...options.modifiers,
     }).forEach(name => {

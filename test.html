@@ -5,149 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-   <style>
-   .link-anchor {
-  position: relative;
-  width: 0;
-  font-size: .8em;
-  opacity: 0;
-  transition: opacity .2s ease-in-out;
-}
-.anchor-wrapper {
-  border: none;
-}
-.anchor-wrapper:hover .link-anchor {
-  opacity: 1;
-}
+    <style>
+      .link-anchor {
+        position: relative;
+        width: 0;
+        font-size: 0.8em;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+      .anchor-wrapper {
+        border: none;
+      }
+      .anchor-wrapper:hover .link-anchor {
+        opacity: 1;
+      }
 
-section h1[id]:focus,
-section h2[id]:focus,
-section h3[id]:focus,
-section h4[id]:focus,
-section h5[id]:focus {
-  outline: 0;
-}
+      section h1[id]:focus,
+      section h2[id]:focus,
+      section h3[id]:focus,
+      section h4[id]:focus,
+      section h5[id]:focus {
+        outline: 0;
+      }
 
-p.thin {
-    font-weight: 100;
-    margin: 0;
-    line-height: 1.2em;
-}
+      p.thin {
+        font-weight: 100;
+        margin: 0;
+        line-height: 1.2em;
+      }
 
-p.bold {
-    font-weight: 900;
-    margin: 0;
-    margin-top: -5px;
-}
+      p.bold {
+        font-weight: 900;
+        margin: 0;
+        margin-top: -5px;
+      }
 
-.rel {
-    width: 30%;
-    margin: 0 auto;
-    position: relative;
-    text-align: center;
-    padding: 20px;
-    border-style: dotted;
-    border-color: white;
-    border-width: medium;
-}
+      .rel {
+        width: 30%;
+        margin: 0 auto;
+        position: relative;
+        text-align: center;
+        padding: 20px;
+        border-style: dotted;
+        border-color: #ddd;
+        border-width: medium;
+      }
 
-.popper,
-.tooltip {
-    position: absolute;
-    background: #FFC107;
-    color: black;
-    width: 150px;
-    border-radius: 3px;
-    box-shadow: 0 0 2px rgba(0,0,0,0.5);
-    padding: 10px;
-    text-align: center;
-}
-.style5 .tooltip {
-    background: #1E252B;
-    color: #FFFFFF;
-    max-width: 200px;
-    width: auto;
-    font-size: .8rem;
-    padding: .5em 1em;
-}
-.popper .popper__arrow,
-.tooltip .tooltip-arrow {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    position: absolute;
-    margin: 5px;
-}
+      .popper,
+      .tooltip {
+        position: absolute;
+        background: #ffc107;
+        color: black;
+        width: 150px;
+        border-radius: 3px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        text-align: center;
+      }
+      .style5 .tooltip {
+        background: #1e252b;
+        color: #ffffff;
+        max-width: 200px;
+        width: auto;
+        font-size: 0.8rem;
+        padding: 0.5em 1em;
+      }
+      .popper .popper__arrow,
+      .tooltip .tooltip-arrow {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        position: absolute;
+        margin: 5px;
+      }
 
-.tooltip .tooltip-arrow,
-.popper .popper__arrow {
-    border-color: #FFC107;
-}
-.style5 .tooltip .tooltip-arrow {
-    border-color: #1E252B;
-}
-.popper[x-placement^="top"],
-.tooltip[x-placement^="top"] {
-    margin-bottom: 5px;
-}
-.popper[x-placement^="top"] .popper__arrow,
-.tooltip[x-placement^="top"] .tooltip-arrow {
-    border-width: 5px 5px 0 5px;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    bottom: -5px;
-    left: calc(50% - 5px);
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.popper[x-placement^="bottom"],
-.tooltip[x-placement^="bottom"] {
-    margin-top: 5px;
-}
-.tooltip[x-placement^="bottom"] .tooltip-arrow,
-.popper[x-placement^="bottom"] .popper__arrow {
-    border-width: 0 5px 5px 5px;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    border-top-color: transparent;
-    top: -5px;
-    left: calc(50% - 5px);
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.tooltip[x-placement^="right"],
-.popper[x-placement^="right"] {
-    margin-left: 5px;
-}
-.popper[x-placement^="right"] .popper__arrow,
-.tooltip[x-placement^="right"] .tooltip-arrow {
-    border-width: 5px 5px 5px 0;
-    border-left-color: transparent;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    left: -5px;
-    top: calc(50% - 5px);
-    margin-left: 0;
-    margin-right: 0;
-}
-.popper[x-placement^="left"],
-.tooltip[x-placement^="left"] {
-    margin-right: 5px;
-}
-.popper[x-placement^="left"] .popper__arrow,
-.tooltip[x-placement^="left"] .tooltip-arrow {
-    border-width: 5px 0 5px 5px;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    right: -5px;
-    top: calc(50% - 5px);
-    margin-left: 0;
-    margin-right: 0;
-}
-
-   </style>
+      .tooltip .tooltip-arrow,
+      .popper .popper__arrow {
+        border-color: #ffc107;
+      }
+      .style5 .tooltip .tooltip-arrow {
+        border-color: #1e252b;
+      }
+      .popper[x-placement^="top"],
+      .tooltip[x-placement^="top"] {
+        margin-bottom: 5px;
+      }
+      .popper[x-placement^="top"] .popper__arrow,
+      .tooltip[x-placement^="top"] .tooltip-arrow {
+        border-width: 5px 5px 0 5px;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        bottom: -5px;
+        left: calc(50% - 5px);
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .popper[x-placement^="bottom"],
+      .tooltip[x-placement^="bottom"] {
+        margin-top: 5px;
+      }
+      .tooltip[x-placement^="bottom"] .tooltip-arrow,
+      .popper[x-placement^="bottom"] .popper__arrow {
+        border-width: 0 5px 5px 5px;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        top: -5px;
+        left: calc(50% - 5px);
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .tooltip[x-placement^="right"],
+      .popper[x-placement^="right"] {
+        margin-left: 5px;
+      }
+      .popper[x-placement^="right"] .popper__arrow,
+      .tooltip[x-placement^="right"] .tooltip-arrow {
+        border-width: 5px 5px 5px 0;
+        border-left-color: transparent;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        left: -5px;
+        top: calc(50% - 5px);
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .popper[x-placement^="left"],
+      .tooltip[x-placement^="left"] {
+        margin-right: 5px;
+      }
+      .popper[x-placement^="left"] .popper__arrow,
+      .tooltip[x-placement^="left"] .tooltip-arrow {
+        border-width: 5px 0 5px 5px;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        right: -5px;
+        top: calc(50% - 5px);
+        margin-left: 0;
+        margin-right: 0;
+      }
+    </style>
   </head>
   <script>
     function abc() {
@@ -185,8 +184,11 @@ p.bold {
       </div>
       <button onclick="abc()">abc</button>
     </div> -->
-    <div class="example" style="margin-top:120px;">
-      <div class="rel" id="example10reference1">
+    <div
+      class="example"
+      style="margin:120px auto;width: 800px;height:400px;position: relative;border: 1px solid #ddd;overflow: scroll;"
+    >
+      <div class="rel" id="example10reference1" style="height:200px;margin: auto;">
         <p class="bold">Hey!</p>
         <p class="thin">Choose where to put your popper!</p>
         <select id="example10positionSelector">
@@ -234,34 +236,34 @@ p.bold {
 
           // Stop autoflip popper when the user click on the dropdown
           $("#example10positionSelector").on("click", function() {
-            clearInterval(autoPopperFunctionTimer);
+            // clearInterval(autoPopperFunctionTimer);
           });
 
-          var autoPopperFunctionTimer = setInterval(function() {
-            if (index === 0) {
-              $("#example10positionSelector").val("top");
-              $("#example10positionSelector").trigger("change");
-              index++;
-            } else if (index === 1) {
-              $("#example10positionSelector").val("right");
-              $("#example10positionSelector").trigger("change");
-              index++;
-            } else if (index === 2) {
-              $("#example10positionSelector").val("bottom");
-              $("#example10positionSelector").trigger("change");
-              index++;
-            } else {
-              $("#example10positionSelector").val("left");
-              $("#example10positionSelector").trigger("change");
-              index = 0;
-            }
-          }, 4000);
+          // var autoPopperFunctionTimer = setInterval(function() {
+          //   if (index === 0) {
+          //     $("#example10positionSelector").val("top");
+          //     $("#example10positionSelector").trigger("change");
+          //     index++;
+          //   } else if (index === 1) {
+          //     $("#example10positionSelector").val("right");
+          //     $("#example10positionSelector").trigger("change");
+          //     index++;
+          //   } else if (index === 2) {
+          //     $("#example10positionSelector").val("bottom");
+          //     $("#example10positionSelector").trigger("change");
+          //     index++;
+          //   } else {
+          //     $("#example10positionSelector").val("left");
+          //     $("#example10positionSelector").trigger("change");
+          //     index = 0;
+          //   }
+          // }, 4000);
 
           function attachPopper(evt) {
             position = evt.target.value;
 
             //Position of the popper
-           // $("#example10code").html(code.replace("position", position));
+            // $("#example10code").html(code.replace("position", position));
             $(".currentPosition").text(position);
 
             popper && popper.destroy();
@@ -274,7 +276,6 @@ p.bold {
       </script>
     </div>
     <script src="https://popper.js.org/js/jquery.min.js"></script>
-    <script src="https://unpkg.com/popper.js@^1"></script>
-    <script></script>
+    <script src="packages/popper/dist/umd/popper.js"></script>
   </body>
 </html>

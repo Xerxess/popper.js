@@ -1,3 +1,6 @@
+/**
+ * 计算this.popper 的最终位置
+ */
 import getOuterSizes from './getOuterSizes';
 import getOppositePlacement from './getOppositePlacement';
 
@@ -30,14 +33,51 @@ export default function getPopperOffsets(popper, referenceOffsets, placement) {
   const measurement = isHoriz ? 'height' : 'width';
   const secondaryMeasurement = !isHoriz ? 'height' : 'width';
 
+  // 根据 isHoriz还计算this.popper位置
+  /**
+   *
+   * isHoriz=left|right
+   * mainSide=top
+   * secondarySide=left
+   * measurement=height
+   * secondaryMeasurement=width
+   * popperOffsets['top']=referenceOffsets['top']+referenceOffsets['height']/2-popperRect['height'] 非常简单的计算公式，计算垂直方向中间位置
+   * ------------------------------------------------------------------------------------
+   *
+   * isHoriz!=left|right
+   * mainSide=left
+   * secondarySide=top
+   * measurement=width
+   * secondaryMeasurement=height
+   * popperOffsets['left']=referenceOffsets['left']+referenceOffsets['width']/2-popperRect['width'] 非常简单的计算公式，计算水平方向中间位置
+   *
+   */
+
   popperOffsets[mainSide] =
     referenceOffsets[mainSide] +
     referenceOffsets[measurement] / 2 -
     popperRect[measurement] / 2;
+
+   /**
+   *
+   * placement='left'==secondarySide='left'
+   * popperOffsets['left']=referenceOffsets['left'] - popperRect['width']; 计算left的距离
+   * -----------------------------------------------------------------
+   * placement='top'==secondarySide='top'
+   * popperOffsets['top']=referenceOffsets['top'] - popperRect['height']; 计算top的距离
+   */
   if (placement === secondarySide) {
     popperOffsets[secondarySide] =
       referenceOffsets[secondarySide] - popperRect[secondaryMeasurement];
   } else {
+    /**
+     *
+     *
+     * 当 placement=='right'时 popperOffsets['left']=referenceOffsets['right']
+     *
+     * 当 placement=='bottom'时 popperOffsets['top']=referenceOffsets['bottom']
+     *
+     */
     popperOffsets[secondarySide] =
       referenceOffsets[getOppositePlacement(secondarySide)];
   }

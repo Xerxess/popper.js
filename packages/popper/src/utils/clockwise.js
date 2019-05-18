@@ -4,6 +4,7 @@ import placements from '../methods/placements';
 const validPlacements = placements.slice(3);
 
 /**
+ * 根据当前的
  * Given an initial placement, returns all the subsequent placements
  * clockwise (or counter-clockwise).
  *

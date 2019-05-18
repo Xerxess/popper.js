@@ -1,3 +1,5 @@
+// 计算边界限制并返回它们
+
 import getScrollParent from './getScrollParent';
 import getParentNode from './getParentNode';
 import findCommonOffsetParent from './findCommonOffsetParent'; // 查找两个提供的节点共用的偏移父级

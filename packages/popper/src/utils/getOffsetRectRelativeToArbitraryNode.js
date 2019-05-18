@@ -1,3 +1,5 @@
+//获取children相对parent的偏移量
+
 import getStyleComputedProperty from './getStyleComputedProperty';
 import includeScroll from './includeScroll';
 import getScrollParent from './getScrollParent';
