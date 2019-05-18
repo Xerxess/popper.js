@@ -76,6 +76,7 @@ export default class Popper {
       }
     });
 
+
     // fire the first update to position the popper in the right place
     this.update(); //逻辑 主入口
 
