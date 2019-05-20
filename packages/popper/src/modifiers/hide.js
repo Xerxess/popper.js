@@ -1,3 +1,4 @@
+// 修饰符用于在其引用元素位于popper边界之外时隐藏popper。它将设置一个x-out-of-boundary属性，当其引用超出边界时，该属性可用于使用CSS选择器隐藏popper。
 import isModifierRequired from '../utils/isModifierRequired';
 import find from '../utils/find';
 

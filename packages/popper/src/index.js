@@ -28,18 +28,19 @@ export default class Popper {
 
     // init state 状态初始化
     this.state = {
-      isDestroyed: false,//销毁状态
-      isCreated: false,// 创建状态
+      isDestroyed: false, //销毁状态
+      isCreated: false, // 创建状态
       scrollParents: [], // 内器
     };
 
     // get reference and popper elements (allow jQuery wrappers)
-    this.reference = reference && reference.jquery ? reference[0] : reference;// 确认 reference 如果是jquery对象处理
-    this.popper = popper && popper.jquery ? popper[0] : popper;// 确认 popper 如果是jquery对象处理
+    this.reference = reference && reference.jquery ? reference[0] : reference; // 确认 reference 如果是jquery对象处理
+    this.popper = popper && popper.jquery ? popper[0] : popper; // 确认 popper 如果是jquery对象处理
 
     // Deep merge modifiers options
-    this.options.modifiers = {};// 修饰配置
-    Object.keys({ // 合并配置
+    this.options.modifiers = {}; // 修饰配置
+    Object.keys({
+      // 合并配置
       ...Popper.Defaults.modifiers,
       ...options.modifiers,
     }).forEach(name => {
@@ -64,6 +65,7 @@ export default class Popper {
     // such code is executed in the same order of its modifier
     // they could add new properties to their options configuration
     // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
+    // 如果修饰对象中存在onLoad需要先行执行
     this.modifiers.forEach(modifierOptions => {
       if (modifierOptions.enabled && isFunction(modifierOptions.onLoad)) {
         modifierOptions.onLoad(
@@ -75,7 +77,6 @@ export default class Popper {
         );
       }
     });
-
 
     // fire the first update to position the popper in the right place
     this.update(); //逻辑 主入口

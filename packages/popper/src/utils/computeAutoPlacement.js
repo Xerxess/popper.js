@@ -1,10 +1,12 @@
+
 import getBoundaries from '../utils/getBoundaries';
 
-function getArea({ width, height }) {
+function getArea({ width, height }) { //面积
   return width * height;
 }
 
 /**
+ * 如果 placement:'auto' 则需要通过计算等到适当的placement,
  * Utility used to transform the `auto` placement to the placement with more
  * available space.
  * @method
@@ -57,18 +59,18 @@ export default function computeAutoPlacement(
       ...rects[key],
       area: getArea(rects[key]),
     }))
-    .sort((a, b) => b.area - a.area);
+    .sort((a, b) => b.area - a.area); // 获取面积从大到小的范围
 
   const filteredAreas = sortedAreas.filter(
     ({ width, height }) =>
       width >= popper.clientWidth && height >= popper.clientHeight
-  );
+  );// 过滤不符合要求
 
   const computedPlacement = filteredAreas.length > 0
     ? filteredAreas[0].key
     : sortedAreas[0].key;
 
-  const variation = placement.split('-')[1];
+  const variation = placement.split('-')[1];// 如果是'auto-start|auto-end'
 
   return computedPlacement + (variation ? `-${variation}` : '');
 }

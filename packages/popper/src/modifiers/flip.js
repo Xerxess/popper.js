@@ -1,3 +1,5 @@
+// 修饰符用于在弹出窗口开始与其参考元素重叠时翻转它。
+
 import getOppositePlacement from '../utils/getOppositePlacement';
 import getOppositeVariation from '../utils/getOppositeVariation';
 import getPopperOffsets from '../utils/getPopperOffsets';
