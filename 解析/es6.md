@@ -2,6 +2,7 @@
 
 * let
 * const  https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/const
+* 解构赋值 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 * 展开操作符 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Spread_syntax
 * 箭头函数 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 * 解构赋值 https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
